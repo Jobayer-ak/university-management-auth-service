@@ -21,8 +21,6 @@ const createUserService = async (user: IUser): Promise<IUser | null> => {
     throw new Error('Failed to create user!')
   }
 
-  console.log('create user: ', createUserService)
-
   return createdUser
 }
 
