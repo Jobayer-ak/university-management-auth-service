@@ -6,9 +6,24 @@
     "auditLog": "/home/jobayer/Projects/Next Level/University Management/logs/winston/errors/.6470ce021401ba54e3137486a500ebaf06650028-audit.json",
     "files": [
         {
-            "date": 1687886773644,
+            "date": 1687887867072,
             "name": "/home/jobayer/Projects/Next Level/University Management/logs/winston/errors/ums-2023-27-06-23-error.log",
-            "hash": "a1f4350a0e6891d2d2d7795e6c42457f913c3d66c53e1211aa4a351b9a8e0341"
+            "hash": "a63a24cd596a6404b5df5124106841af0d0591d7e2999f1500400258bdd3706f"
+        },
+        {
+            "date": 1687927788095,
+            "name": "/home/jobayer/Projects/Next Level/University Management/logs/winston/errors/ums-2023-28-06-10-error.log",
+            "hash": "7913d8c62eee9198236a3f7678c81a649da1f7504c1245864997bda74d3f8cd8"
+        },
+        {
+            "date": 1687929648176,
+            "name": "/home/jobayer/Projects/Next Level/University Management/logs/winston/errors/ums-2023-28-06-11-error.log",
+            "hash": "a27f390f35cc7ba539d85b12c83ebd0f936fc9d0689a3cb9dad779220eb1f627"
+        },
+        {
+            "date": 1687933251683,
+            "name": "/home/jobayer/Projects/Next Level/University Management/logs/winston/errors/ums-2023-28-06-12-error.log",
+            "hash": "b320cd8c3538e2801fe69161d3259c1fca87184b09fba5e968f8fe31889f6eea"
         }
     ],
     "hashType": "sha256"
