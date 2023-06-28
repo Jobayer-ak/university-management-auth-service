@@ -6,9 +6,9 @@
     "auditLog": "/home/jobayer/Projects/Next Level/University Management/logs/winston/errors/.6470ce021401ba54e3137486a500ebaf06650028-audit.json",
     "files": [
         {
-            "date": 1687940473583,
+            "date": 1687940902621,
             "name": "/home/jobayer/Projects/Next Level/University Management/logs/winston/errors/ums-2023-28-06-14-error.log",
-            "hash": "ab0ca052a1c51f36658604e3afdfd26c20e034636c1e5dce055439a8ee4c419d"
+            "hash": "dac48c05448653bfd89cc5c6117d8131dad7be4907be88870d59adbf5b4ba8a2"
         }
     ],
     "hashType": "sha256"

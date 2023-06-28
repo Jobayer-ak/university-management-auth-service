@@ -24,6 +24,7 @@ async function main() {
     errorlogger.error('Failed to connect database', err)
   }
 
+  // undhandled rejection
   process.on('unhandledRejection', error => {
     errorlogger.error(error)
     if (server) {

@@ -6,9 +6,9 @@
     "auditLog": "/home/jobayer/Projects/Next Level/University Management/logs/winston/success/.b20560e135292c8f0923c952f701e904f41f29ff-audit.json",
     "files": [
         {
-            "date": 1687940473579,
+            "date": 1687940902615,
             "name": "/home/jobayer/Projects/Next Level/University Management/logs/winston/success/ums-2023-28-06-14-succes.log",
-            "hash": "e235249afa396b02dec1240216f28ce3986de332f0b857b69a16113486bad6b4"
+            "hash": "84e2514f2e75c29635a59e931a4a35f13e2aa69eeaba9019c9818f615ba4d950"
         }
     ],
     "hashType": "sha256"
