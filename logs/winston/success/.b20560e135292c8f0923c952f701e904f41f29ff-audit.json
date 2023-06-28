@@ -24,6 +24,11 @@
             "date": 1687933251678,
             "name": "/home/jobayer/Projects/Next Level/University Management/logs/winston/success/ums-2023-28-06-12-succes.log",
             "hash": "e534cba282ad7eabb5ca046646b11e1d58e2e6fff3009e45e5b6bb286fae9060"
+        },
+        {
+            "date": 1687936268331,
+            "name": "/home/jobayer/Projects/Next Level/University Management/logs/winston/success/ums-2023-28-06-13-succes.log",
+            "hash": "669f09a8585e5ab7c407c3d9d19b7d094df0032b46c7ed80902977b710eaa698"
         }
     ],
     "hashType": "sha256"

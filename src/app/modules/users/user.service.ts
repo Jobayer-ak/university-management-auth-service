@@ -1,7 +1,7 @@
-import { User } from './users.model'
+import { User } from './user.model'
 import { IUser } from './user.interface'
 import config from '../../../config/index'
-import { generateUserId } from './users.utils'
+import { generateUserId } from './user.utils'
 import ApiError from '../../../errors/ApiError'
 
 const createUserService = async (user: IUser): Promise<IUser | null> => {
@@ -25,6 +25,6 @@ const createUserService = async (user: IUser): Promise<IUser | null> => {
   return createdUser
 }
 
-export default {
+export const UserService = {
   createUserService,
 }

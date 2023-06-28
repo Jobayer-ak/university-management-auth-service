@@ -1,8 +1,9 @@
-import express, { Application } from 'express'
+/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable no-unused-vars */
+import express, { Application, NextFunction, Request, Response } from 'express'
 import cors from 'cors'
-
-import usersRouter from './app/modules/users/user.route'
 import globalErrorHandler from './app/middlewares/globalErrorHandler'
+import { UserRoutes } from './app/modules/users/user.route'
 const app: Application = express()
 
 app.use(cors())
@@ -12,17 +13,15 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
 // Application routes
-app.use('/api/v1/users/', usersRouter)
+app.use('/api/v1/users/', UserRoutes)
 
 // class (error format)
 
 // // testing
-// app.get('/', (req: Request, res: Response, next: NextFunction) => {
-//   // throw new ApiError(400, 'Its an Error!')
-//   next('Its an Error') // global middleware handler
-// })
-
-// global error handler
+app.get('/', async (req: Request, res: Response, next: NextFunction) => {
+  Promise.reject(new Error('Unhandled Promise Rejection'))
+})
+// global error handlergit add
 app.use(globalErrorHandler)
 
 export default app
