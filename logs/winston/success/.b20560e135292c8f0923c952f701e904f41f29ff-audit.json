@@ -6,9 +6,14 @@
     "auditLog": "/home/jobayer/Projects/Next Level/University Management/logs/winston/success/.b20560e135292c8f0923c952f701e904f41f29ff-audit.json",
     "files": [
         {
-            "date": 1687940902615,
-            "name": "/home/jobayer/Projects/Next Level/University Management/logs/winston/success/ums-2023-28-06-14-succes.log",
-            "hash": "84e2514f2e75c29635a59e931a4a35f13e2aa69eeaba9019c9818f615ba4d950"
+            "date": 1687965108834,
+            "name": "/home/jobayer/Projects/Next Level/University Management/logs/winston/success/ums-2023-28-06-21-succes.log",
+            "hash": "23f4dd3314d22ef341a7b79736daa46088ed3812b37f215dc007afb3cb87f66d"
+        },
+        {
+            "date": 1688148380427,
+            "name": "/home/jobayer/Projects/Next Level/University Management/logs/winston/success/ums-2023-01-07-00-succes.log",
+            "hash": "ba68828a254bb9e656d44fd09288c13a75997d84a059ed5786606d02f5184a0c"
         }
     ],
     "hashType": "sha256"
