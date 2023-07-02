@@ -1,0 +1,20 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 14
+    },
+    "auditLog": "/home/jobayer/Projects/Next Level/University Management/logs/winston/errors/.6470ce021401ba54e3137486a500ebaf06650028-audit.json",
+    "files": [
+        {
+            "date": 1688279670272,
+            "name": "/home/jobayer/Projects/Next Level/University Management/logs/winston/errors/ums-2023-02-07-12-error.log",
+            "hash": "c849df7e78d5258523f8b4ecedd06e3d25b8974fd984e02fcd51e3fadb593582"
+        },
+        {
+            "date": 1688305717419,
+            "name": "/home/jobayer/Projects/Next Level/University Management/logs/winston/errors/ums-2023-02-07-19-error.log",
+            "hash": "d051d17524c450dea4a82d6e5d17fac4712204b4c4965e2b88488f0b69c92133"
+        }
+    ],
+    "hashType": "sha256"
+}
