@@ -1,6 +1,8 @@
 import { NextFunction, Request, Response } from 'express';
 import { UserService } from './user.service';
 import catchAsync from '../../../share/catchAsync';
+import sendResponse from '../../../share/sendResponse';
+import httpStatus from 'http-status';
 
 // import userService from './user.service'
 
@@ -11,10 +13,10 @@ const createUser = catchAsync(
     const result = await UserService.createUserService(user);
 
     next();
-
-    res.status(200).json({
+    sendResponse(res, {
+      statusCode: httpStatus.OK,
       success: true,
-      message: 'User created successfully!',
+      message: 'User is created successfully!',
       data: result,
     });
   }
