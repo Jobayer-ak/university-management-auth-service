@@ -9,7 +9,7 @@ import {
   academicSemesterTitles,
 } from './academicSemester.constant';
 import ApiError from '../../../errors/ApiError';
-import status from 'http-status';
+import httpStatus from 'http-status';
 
 const academicSemesterSchema = new Schema<IAcademicsemester>(
   {
@@ -41,7 +41,7 @@ const academicSemesterSchema = new Schema<IAcademicsemester>(
   { timestamps: true }
 );
 
-// handling same year and same semester issue
+// handling same year and same semester issue solve with mongoose pre hook
 academicSemesterSchema.pre('save', async function (next) {
   const isExist = await AcademicSemester.findOne({
     title: this.title,
@@ -49,7 +49,10 @@ academicSemesterSchema.pre('save', async function (next) {
   });
 
   if (isExist) {
-    throw new ApiError(status.CONFLICT, 'Academic semester is already exist!');
+    throw new ApiError(
+      httpStatus.CONFLICT,
+      'Academic semester is already exist!'
+    );
   }
   next();
 });
@@ -58,5 +61,3 @@ export const AcademicSemester = model<IAcademicsemester, AcademicSemesterModel>(
   'AcademicSemester',
   academicSemesterSchema
 );
-
-// data -> check -> same year && same semester
