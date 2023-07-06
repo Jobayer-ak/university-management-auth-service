@@ -1,3 +1,5 @@
+// extends Error class with ApiError class
+
 class ApiError extends Error {
   statusCode: number;
 
