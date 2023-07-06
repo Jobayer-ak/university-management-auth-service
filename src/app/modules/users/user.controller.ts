@@ -12,13 +12,14 @@ const createUser = catchAsync(
 
     const result = await UserService.createUserService(user);
 
-    next();
     sendResponse(res, {
       statusCode: httpStatus.OK,
       success: true,
       message: 'User is created successfully!',
       data: result,
     });
+
+    next();
   }
 );
 
