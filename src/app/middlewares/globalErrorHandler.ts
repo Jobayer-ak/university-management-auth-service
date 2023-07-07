@@ -12,7 +12,7 @@ import handleZodError from '../../errors/handleZodError';
 
 const globalErrorHandler: ErrorRequestHandler = (error, req, res, next) => {
   config.env === 'developement'
-    ? console.log(`globalErrorHandler`, error)
+    ? console.log(`globalErrorHandler `, error)
     : errorlogger.error('globalErrorHandler', error);
 
   let statusCode = 500;
