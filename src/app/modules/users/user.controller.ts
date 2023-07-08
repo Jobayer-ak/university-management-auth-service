@@ -3,6 +3,7 @@ import { UserService } from './user.service';
 import catchAsync from '../../../share/catchAsync';
 import sendResponse from '../../../share/sendResponse';
 import httpStatus from 'http-status';
+import { IUser } from './user.interface';
 
 // import userService from './user.service'
 
@@ -12,7 +13,7 @@ const createUser = catchAsync(
 
     const result = await UserService.createUserService(user);
 
-    sendResponse(res, {
+    sendResponse<IUser>(res, {
       statusCode: httpStatus.OK,
       success: true,
       message: 'User is created successfully!',
