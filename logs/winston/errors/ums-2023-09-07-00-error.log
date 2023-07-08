@@ -1,0 +1,4 @@
+Sun Jul 09 2023 0:16:6} [UMS!] error: Cast to number failed for value "i" (type string) at path "year" for model "AcademicSemester" 
+Sun Jul 09 2023 0:42:36} [UMS!] error: $regex has to be a string 
+Sun Jul 09 2023 0:42:47} [UMS!] error: $and/$or/$nor must be a nonempty array 
+Sun Jul 09 2023 0:51:5} [UMS!] error: $and/$or/$nor must be a nonempty array 
