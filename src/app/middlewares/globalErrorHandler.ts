@@ -1,8 +1,7 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable no-console */
 /* eslint-disable no-unused-expressions */
-import { ErrorRequestHandler, Request, Response } from 'express';
-import { Error } from 'mongoose';
+import { ErrorRequestHandler, NextFunction, Request, Response } from 'express';
 import config from '../../config';
 import ApiError from '../../errors/ApiError';
 import handleValidationError from '../../errors/handleValidationError';
@@ -16,11 +15,14 @@ import { errorlogger } from '../../share/logger';
 const globalErrorHandler: ErrorRequestHandler = (
   error,
   req: Request,
-  res: Response
+  res: Response,
+  next: NextFunction
 ) => {
   config.env === 'development'
-    ? console.log(`globalErrorHandler ~~`, { error })
+    ? console.log(`🐱‍🏍 globalErrorHandler ~~`, error)
     : errorlogger.error(`🐱‍🏍 globalErrorHandler ~~`, error);
+
+  // config.env === "production"? console.log("globalErrorHandler: ", )
 
   let statusCode = 500;
   let message = 'Something went wrong !';
@@ -38,8 +40,6 @@ const globalErrorHandler: ErrorRequestHandler = (
     errorMessages = simplifiedError.errorMessages;
   } else if (error?.name === 'CastError') {
     const simplifiedError = handleCastError(error);
-
-    console.log('simplified error: ', simplifiedError);
     statusCode = simplifiedError.statusCode;
     message = simplifiedError.message;
     errorMessages = simplifiedError.errorMessages;
@@ -72,6 +72,8 @@ const globalErrorHandler: ErrorRequestHandler = (
     errorMessages,
     stack: config.env !== 'production' ? error?.stack : undefined,
   });
+
+  next();
 };
 
 export default globalErrorHandler;

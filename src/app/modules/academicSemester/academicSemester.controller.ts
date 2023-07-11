@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 import { NextFunction, Request, Response } from 'express';
 import { AcademicSemesterService } from './academicSemester.service';
 import catchAsync from '../../../share/catchAsync';
