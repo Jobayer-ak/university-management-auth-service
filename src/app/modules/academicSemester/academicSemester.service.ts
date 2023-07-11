@@ -14,7 +14,7 @@ import { IGenericResponse } from '../../../interfaces/common';
 import { paginationHelpers } from '../../../helpers/paginationHelper';
 import { SortOrder } from 'mongoose';
 
-const createSemester = async (
+const createSemesterService = async (
   payload: IAcademicsemester
 ): Promise<IAcademicsemester> => {
   if (academicSemesterTitleCodeMapper[payload.title] !== payload.code) {
@@ -112,8 +112,8 @@ const getSingleSemesterService = async (
   return result;
 };
 
-export const AcademicSemesteService = {
-  createSemester,
+export const AcademicSemesterService = {
+  createSemesterService,
   getAllSemestersService,
   getSingleSemesterService,
 };

@@ -1,0 +1,3 @@
+Tue Jul 11 2023 14:1:1} [UMS!] error: Cast to ObjectId failed for value "64a9a8fcfbdb4e0e63377de" (type string) at path "_id" for model "AcademicSemester" 
+Tue Jul 11 2023 14:1:37} [UMS!] error: Cast to ObjectId failed for value "64a9a8fcfbdb4e0e63377de" (type string) at path "_id" for model "AcademicSemester" 
+Tue Jul 11 2023 14:7:21} [UMS!] error: Cast to ObjectId failed for value "64a9a8fcfbdb4e0e63377de" (type string) at path "_id" for model "AcademicSemester" 

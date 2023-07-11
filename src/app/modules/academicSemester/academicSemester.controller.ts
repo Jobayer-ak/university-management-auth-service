@@ -1,5 +1,6 @@
+/* eslint-disable no-console */
 import { NextFunction, Request, Response } from 'express';
-import { AcademicSemesteService } from './academicSemester.service';
+import { AcademicSemesterService } from './academicSemester.service';
 import catchAsync from '../../../share/catchAsync';
 import sendResponse from '../../../share/sendResponse';
 import httpStatus from 'http-status';
@@ -12,7 +13,7 @@ const createSemester = catchAsync(
   async (req: Request, res: Response, next: NextFunction) => {
     const { ...academicSemesterData } = req.body;
 
-    const result = await AcademicSemesteService.createSemester(
+    const result = await AcademicSemesterService.createSemesterService(
       academicSemesterData
     );
 
@@ -33,9 +34,7 @@ const getAllSemesters = catchAsync(
 
     const paginationOptions = pick(req.query, paginationFields);
 
-    // console.log(filters);
-
-    const result = await AcademicSemesteService.getAllSemestersService(
+    const result = await AcademicSemesterService.getAllSemestersService(
       filters,
       paginationOptions
     );
@@ -52,22 +51,18 @@ const getAllSemesters = catchAsync(
   }
 );
 
-const getSingleSemester = catchAsync(
-  async (req: Request, res: Response, next: NextFunction) => {
-    const id = req.params.id;
+const getSingleSemester = catchAsync(async (req: Request, res: Response) => {
+  const { id } = req.params;
 
-    const result = await AcademicSemesteService.getSingleSemesterService(id);
+  const result = await AcademicSemesterService.getSingleSemesterService(id);
 
-    sendResponse<IAcademicsemester>(res, {
-      statusCode: httpStatus.OK,
-      success: true,
-      message: 'Semester retrieved successfully!',
-      data: result,
-    });
-
-    next();
-  }
-);
+  sendResponse<IAcademicsemester>(res, {
+    statusCode: httpStatus.OK,
+    success: true,
+    message: 'Semester retrieved successfully !',
+    data: result,
+  });
+});
 
 export const academicSemesterController = {
   createSemester,
