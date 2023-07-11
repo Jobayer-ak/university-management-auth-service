@@ -3,7 +3,6 @@ import {
   IAcademicFaculty,
   IAcademicFacultyModel,
 } from './academicFaculty.interface';
-import { AcademicSemesterModel } from '../academicSemester/academicSemester.interface';
 
 const AcademicFacultySchema = new Schema<
   IAcademicFaculty,
@@ -16,10 +15,15 @@ const AcademicFacultySchema = new Schema<
       unique: true,
     },
   },
-  { timestamps: true }
+  {
+    timestamps: true,
+    toJSON: {
+      virtuals: true,
+    },
+  }
 );
 
-export const AcademicFaculty = model<IAcademicFaculty, AcademicSemesterModel>(
+export const AcademicFaculty = model<IAcademicFaculty, IAcademicFacultyModel>(
   'AcademicFaculty',
   AcademicFacultySchema
 );
