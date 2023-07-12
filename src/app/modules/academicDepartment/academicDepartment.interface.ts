@@ -6,6 +6,10 @@ export type IAcademicDepartment = {
   academicFaculty: Types.ObjectId | IAcademicFaculty;
 };
 
+export type IAcademicDepartmentFilters = {
+  searchTerm?: string;
+};
+
 export type AcademicDepartmentModel = Model<
   IAcademicDepartment,
   Record<string, unknown>
