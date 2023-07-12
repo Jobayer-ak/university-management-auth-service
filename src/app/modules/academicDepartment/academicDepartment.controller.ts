@@ -78,7 +78,7 @@ const deleteDepartment = catchAsync(async (req: Request, res: Response) => {
   sendResponse(res, {
     statusCode: httpStatus.OK,
     success: true,
-    message: 'Single Academic department retrieved successfully!',
+    message: 'Single Academic department deleted successfully!',
     data: result,
   });
 });

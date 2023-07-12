@@ -38,7 +38,12 @@ const academicSemesterSchema = new Schema<IAcademicsemester>(
       enum: academicSemesterMonths,
     },
   },
-  { timestamps: true }
+  {
+    timestamps: true,
+    toJSON: {
+      virtuals: true,
+    },
+  }
 );
 
 // handling same year and same semester issue solve with mongoose pre hook
