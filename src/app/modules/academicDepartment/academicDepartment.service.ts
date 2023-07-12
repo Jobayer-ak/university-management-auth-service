@@ -73,7 +73,39 @@ const getAllDepartmentService = async (
   };
 };
 
+const getSingleDeparmtmentService = async (
+  id: string
+): Promise<IAcademicDepartment | null> => {
+  const result = await AcademicDeparment.findById(id).populate(
+    'academicFaculty'
+  );
+  return result;
+};
+
+const updateDeparmtmentService = async (
+  id: string,
+  payload: IAcademicDepartment
+): Promise<IAcademicDepartment | null> => {
+  const result = await AcademicDeparment.findOneAndUpdate(
+    { _id: id },
+    payload,
+    { new: true }
+  );
+
+  return result;
+};
+
+const deleteDeparmtmentService = async (
+  id: string
+): Promise<IAcademicDepartment | null> => {
+  const result = await AcademicDeparment.findByIdAndDelete({ _id: id });
+  return result;
+};
+
 export const AcademicDeparmentService = {
   createDepartment,
   getAllDepartmentService,
+  getSingleDeparmtmentService,
+  updateDeparmtmentService,
+  deleteDeparmtmentService,
 };

@@ -7,10 +7,18 @@ const router = express.Router();
 
 router.post(
   '/create-department',
-  validateRequest(AcademicDepartmentValidation.AcademicDeparmentZodSchema),
+  validateRequest(AcademicDepartmentValidation.createDeparmentZodSchema),
   AcademicDepartmentController.createDepartment
 );
 
+router.get('/:id', AcademicDepartmentController.getSingleDepartment);
+router.patch(
+  '/:id',
+  validateRequest(AcademicDepartmentValidation.updateDeparmentZodSchema),
+  AcademicDepartmentController.updateDepartment
+);
+
+router.delete('/:id', AcademicDepartmentController.deleteDepartment);
 router.get('/', AcademicDepartmentController.getAllDepartments);
 
 export const AcademicDepartmentRoutes = router;
