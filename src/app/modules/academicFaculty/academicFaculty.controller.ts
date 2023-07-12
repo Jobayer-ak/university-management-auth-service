@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 import { Request, Response } from 'express';
 import catchAsync from '../../../share/catchAsync';
-import sendReponse from '../../../share/sendResponse';
+import sendResponse from '../../../share/sendResponse';
 import httpStatus from 'http-status';
 import { AcademicFacultyService } from './academicFaculty.service';
 import pick from '../../../share/pick';
@@ -16,7 +16,7 @@ const createFaculty = catchAsync(async (req: Request, res: Response) => {
     academicFacultyData
   );
 
-  sendReponse(res, {
+  sendResponse(res, {
     statusCode: httpStatus.OK,
     success: true,
     message: 'Academic Faculty created successfully!',
@@ -36,7 +36,7 @@ const getAllFaculties = catchAsync(async (req: Request, res: Response) => {
     paginationOptions
   );
 
-  sendReponse<IAcademicFaculty[]>(res, {
+  sendResponse<IAcademicFaculty[]>(res, {
     statusCode: httpStatus.OK,
     success: true,
     message: 'Academic Faculties Retrieved successfully!',
@@ -50,7 +50,7 @@ const getSingleFaculty = catchAsync(async (req: Request, res: Response) => {
 
   const result = await AcademicFacultyService.getSingleFacultyService(id);
 
-  sendReponse(res, {
+  sendResponse(res, {
     statusCode: httpStatus.OK,
     success: true,
     message: 'Academic Faculty retrieved successfully!',
@@ -68,10 +68,22 @@ const updateFaculty = catchAsync(async (req: Request, res: Response) => {
     updatedData
   );
 
-  sendReponse<IAcademicFaculty>(res, {
+  sendResponse<IAcademicFaculty>(res, {
     statusCode: httpStatus.OK,
     success: true,
     message: 'Academic Faculty updated successfully!',
+    data: result,
+  });
+});
+
+const deleteFaculty = catchAsync(async (req: Request, res: Response) => {
+  const { id } = req.params;
+  const result = await AcademicFacultyService.deleteFacultyService(id);
+
+  sendResponse<IAcademicFaculty>(res, {
+    statusCode: httpStatus.OK,
+    success: true,
+    message: 'Academic faculty deleted successfully!',
     data: result,
   });
 });
@@ -81,4 +93,5 @@ export const AcademicFacultyController = {
   getAllFaculties,
   getSingleFaculty,
   updateFaculty,
+  deleteFaculty,
 };
