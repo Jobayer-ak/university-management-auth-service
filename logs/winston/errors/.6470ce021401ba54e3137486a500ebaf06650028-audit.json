@@ -79,6 +79,21 @@
             "date": 1689229505181,
             "name": "/home/jobayer/Projects/Next Level/University Management/logs/winston/errors/ums-2023-13-07-12-error.log",
             "hash": "0b296ce2deec8f7325f6601eec0dc121dd681822f1812f240340555f0a5d65cf"
+        },
+        {
+            "date": 1689263762139,
+            "name": "/home/jobayer/Projects/Next Level/University Management/logs/winston/errors/ums-2023-13-07-21-error.log",
+            "hash": "1c4841e19a66c9b3832c68826c1942e3d0fb8e84a2c5cca71e4c64a51d7e9e0b"
+        },
+        {
+            "date": 1689264826852,
+            "name": "/home/jobayer/Projects/Next Level/University Management/logs/winston/errors/ums-2023-13-07-22-error.log",
+            "hash": "f54a6241635ac1d3bc526dad71c86ae8c1e058ca7708db76eaf82d703bc1c78d"
+        },
+        {
+            "date": 1689270464005,
+            "name": "/home/jobayer/Projects/Next Level/University Management/logs/winston/errors/ums-2023-13-07-23-error.log",
+            "hash": "3e0971a8761b7a2aa7f64fcf20136f81c08d53b68d6be2f75e9fc665b824436d"
         }
     ],
     "hashType": "sha256"

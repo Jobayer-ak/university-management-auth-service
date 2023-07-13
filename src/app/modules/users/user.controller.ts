@@ -7,11 +7,11 @@ import { IUser } from './user.interface';
 
 // import userService from './user.service'
 
-const createUser = catchAsync(
+const createStudent = catchAsync(
   async (req: Request, res: Response, next: NextFunction) => {
-    const { ...userData } = req.body;
+    const { student, ...userData } = req.body;
 
-    const result = await UserService.createUserService(userData);
+    const result = await UserService.createStudentService(student, userData);
 
     sendResponse<IUser>(res, {
       statusCode: httpStatus.OK,
@@ -25,5 +25,5 @@ const createUser = catchAsync(
 );
 
 export const UserController = {
-  createUser,
+  createStudent,
 };
