@@ -28,6 +28,8 @@ const createStudentService = async (
     student.academicSemester
   );
 
+  console.log('academic semester: ', academicsemester);
+
   // generate student id
   // transaction
   let newUserAllData = null;
@@ -43,6 +45,7 @@ const createStudentService = async (
     // array
     const newStudent = await Student.create([student], { session });
 
+    console.log('new student: ', newStudent);
     if (!newStudent.length) {
       throw new ApiError(httpStatus.BAD_REQUEST, 'Failed to create student');
     }
@@ -50,7 +53,7 @@ const createStudentService = async (
     // set student--> _id into user.student
     user.student = newStudent[0]._id;
 
-    const newUser = await User.create([user], { session });
+    const newUser = await User.create([user], { session }); // for using transaction it is array instead of obj
 
     if (!newUser.length) {
       throw new ApiError(httpStatus.BAD_REQUEST, 'Failed to create user');
@@ -68,6 +71,7 @@ const createStudentService = async (
 
   // user --> student --> academicSemester, academicDepartment, academicFaculty
 
+  console.log('newuser data: ', newUserAllData);
   if (newUserAllData) {
     newUserAllData = await User.findOne({ id: newUserAllData.id }).populate({
       path: 'student',

@@ -104,6 +104,21 @@
             "date": 1689271267456,
             "name": "/home/jobayer/Projects/Next Level/University Management/logs/winston/success/ums-2023-14-07-00-succes.log",
             "hash": "8de9564015c88e54c2eed85c4cdbaff86090966e3926dc42e13bfeca6a5ec4c2"
+        },
+        {
+            "date": 1689327605568,
+            "name": "/home/jobayer/Projects/Next Level/University Management/logs/winston/success/ums-2023-14-07-15-succes.log",
+            "hash": "b96b867f9b612924cfe0abe8be2551cc0e5cd8d2deb01331635f11c41e34463a"
+        },
+        {
+            "date": 1689330457558,
+            "name": "/home/jobayer/Projects/Next Level/University Management/logs/winston/success/ums-2023-14-07-16-succes.log",
+            "hash": "76bde7d1066c2f85e8888bbf89074231ba92e56d5ee8e12748816255942d959a"
+        },
+        {
+            "date": 1689353082458,
+            "name": "/home/jobayer/Projects/Next Level/University Management/logs/winston/success/ums-2023-14-07-22-succes.log",
+            "hash": "8f2ad1b8f750a7f8d3fbc348a91f0f5c0ddd888c21d25612766d1626f9dade0a"
         }
     ],
     "hashType": "sha256"

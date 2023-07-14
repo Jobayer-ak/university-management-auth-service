@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import { IAcademicSemester } from '../academicSemester/academicSemester.interface';
 import { User } from './user.model';
 
@@ -12,6 +13,8 @@ export const findLastStudentId = async (): Promise<string | undefined> => {
       createdAt: -1,
     })
     .lean();
+
+  console.log('lastStudent doc: ', lastStudent);
 
   return lastStudent?.id ? lastStudent.id.substring(4) : undefined;
 };
