@@ -39,10 +39,19 @@ export type IStudent = {
   permanentAddress: string;
   guardian: Guardian; // embaded object
   localGuardian: LocalGuardian; // embaded object
-  academicFaculty: Types.ObjectId | IAcademicFaculty;
-  academicDepartment: Types.ObjectId | IAcademicDepartment;
-  academicSemester: Types.ObjectId | IAcademicSemester;
+  academicFaculty: Types.ObjectId | IAcademicFaculty; // reference_id
+  academicDepartment: Types.ObjectId | IAcademicDepartment; // reference_id
+  academicSemester: Types.ObjectId | IAcademicSemester; // reference_id
   profileImage?: string;
 };
 
 export type StudentModel = Model<IStudent, Record<string, unknown>>;
+
+export type IStudentFilters = {
+  searchTerm?: string;
+  id?: string;
+  contactNo?: string;
+  emergencyContactNo?: string;
+  name?: string;
+  email?: string;
+};
