@@ -41,7 +41,55 @@ const getAllDepartment = catchAsync(async (req: Request, res: Response) => {
   });
 });
 
+const getSingleDepartment = catchAsync(async (req: Request, res: Response) => {
+  const { id } = req.params;
+
+  const result = await ManagementDepartmentService.getSingleDepartmentService(
+    id
+  );
+
+  sendResponse<IManagementDepartment>(res, {
+    statusCode: httpStatus.OK,
+    success: true,
+    message: 'Fetched single management department successfully !',
+    data: result,
+  });
+});
+
+const updateDepartment = catchAsync(async (req: Request, res: Response) => {
+  const { id } = req.params;
+  const { ...updatedData } = req.body;
+
+  const result = await ManagementDepartmentService.updateDepartmentService(
+    id,
+    updatedData
+  );
+
+  sendResponse<IManagementDepartment>(res, {
+    statusCode: httpStatus.OK,
+    success: true,
+    message: 'Management department updated successfully !',
+    data: result,
+  });
+});
+
+const deleteDepartment = catchAsync(async (req: Request, res: Response) => {
+  const { id } = req.params;
+
+  const result = await ManagementDepartmentService.deleteDepartmentService(id);
+
+  sendResponse<IManagementDepartment>(res, {
+    statusCode: httpStatus.OK,
+    success: true,
+    message: 'Fetched single management department successfully !',
+    data: result,
+  });
+});
+
 export const ManagementDepartmentController = {
   createDepartment,
   getAllDepartment,
+  getSingleDepartment,
+  updateDepartment,
+  deleteDepartment,
 };
