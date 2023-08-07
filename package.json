@@ -1,7 +1,7 @@
 {
   "name": "university-management",
   "version": "1.0.0",
-  "description": "",
+  "description": "university-management-system",
   "main": "src/server.ts",
   "scripts": {
     "start": "ts-node-dev --respawn --transpile-only src/server.ts",
