@@ -1,5 +1,7 @@
 import { Schema, model } from 'mongoose';
 import { IUser, UserModel } from './user.interface';
+import config from '../../../config';
+import bcrypt from 'bcrypt';
 
 const userSchema = new Schema<IUser>(
   {
@@ -20,10 +22,10 @@ const userSchema = new Schema<IUser>(
       type: Schema.Types.ObjectId,
       ref: 'Student',
     },
-    // faculty: {
-    //   type: Schema.Types.ObjectId,
-    //   ref: 'Faculty',
-    // },
+    faculty: {
+      type: Schema.Types.ObjectId,
+      ref: 'Faculty',
+    },
     admin: {
       type: Schema.Types.ObjectId,
       ref: 'Admin',
@@ -36,5 +38,19 @@ const userSchema = new Schema<IUser>(
     },
   }
 );
+
+// static -> User.create() => it is related with model
+//  User.save() => it is related with instance
+
+// prehook
+userSchema.pre('save', async function (next) {
+  // hashing user password
+  this.password = await bcrypt.hash(
+    this.password,
+    Number(config.bcrypt_salt_rounds)
+  );
+
+  next();
+});
 
 export const User = model<IUser, UserModel>('User', userSchema);
