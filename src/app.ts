@@ -5,6 +5,7 @@ import cors from 'cors';
 import globalErrorHandler from './app/middlewares/globalErrorHandler';
 import routes from './app/routes';
 import httpStatus from 'http-status';
+import cookieParser from 'cookie-parser';
 import {
   generateFacultyId,
   generateStudentId,
@@ -12,6 +13,7 @@ import {
 const app: Application = express();
 
 app.use(cors());
+app.use(cookieParser());
 
 // parser
 app.use(express.json());
