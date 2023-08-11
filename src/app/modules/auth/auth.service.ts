@@ -1,11 +1,14 @@
 import httpStatus from 'http-status';
 import ApiError from '../../../errors/ApiError';
 import { User } from '../users/user.model';
-import { ILoginUser, ILoginUserResponse } from './auth.interface';
+import {
+  ILoginUser,
+  ILoginUserResponse,
+  IRefreshTokenResponse,
+} from './auth.interface';
 import { Secret } from 'jsonwebtoken';
 import config from '../../../config';
 import { jwtHelpers } from '../../../helpers/jwt.helper';
-import jwt from 'jsonwebtoken';
 
 const loginUserService = async (
   payload: ILoginUser
@@ -62,22 +65,24 @@ const loginUserService = async (
   };
 };
 
-const refreshTokenService = async (token: string) => {
+const refreshTokenService = async (
+  token: string
+): Promise<IRefreshTokenResponse> => {
   // verify token
 
   let verifiedToken = null;
 
   try {
-    verifiedToken = jwt.verify(token, config.jwt.refresh_secret as Secret);
+    verifiedToken = jwtHelpers.verifyToken(
+      token,
+      config.jwt.refresh_secret as Secret
+    );
   } catch (error) {
     throw new ApiError(httpStatus.FORBIDDEN, 'Invalid refresh token!');
   }
 
   const { userId } = verifiedToken;
 
-  console.log('verified token: ', verifiedToken);
-
-  // after delet user but refresh token remains
   // checking deleted user's refresh token
   const user = new User();
 
@@ -88,6 +93,16 @@ const refreshTokenService = async (token: string) => {
   }
 
   // generate new token
+  const newAccessToken = jwtHelpers.createToken(
+    {
+      id: isUserExist?.id,
+      role: isUserExist?.role,
+    },
+    config.jwt.secret as Secret,
+    config.jwt.expires_in as string
+  );
+
+  return { accessToken: newAccessToken };
 };
 
 export const AuthService = {
