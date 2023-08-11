@@ -59,6 +59,16 @@
             "date": 1691759497734,
             "name": "/home/jobayer/Projects/Next Level/University Management/logs/winston/success/ums-2023-11-08-19-succes.log",
             "hash": "c33d8e0229303aa169b4d2b3feee418e4329d94a069a1337f871ec946d86755f"
+        },
+        {
+            "date": 1691773469200,
+            "name": "/home/jobayer/Projects/Next Level/University Management/logs/winston/success/ums-2023-11-08-23-succes.log",
+            "hash": "3021e55eefc44f410996466c497077a2653dccf3980865ac4995af1923fb2492"
+        },
+        {
+            "date": 1691776981560,
+            "name": "/home/jobayer/Projects/Next Level/University Management/logs/winston/success/ums-2023-12-08-00-succes.log",
+            "hash": "647759de011b4c6560ebd5f108374ab2ba4fe27f3ce5f1e0ee5464e5c420c927"
         }
     ],
     "hashType": "sha256"
