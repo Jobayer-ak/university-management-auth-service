@@ -17,11 +17,14 @@ const userSchema = new Schema<IUser, Record<string, never>, IUserMethods>(
     password: {
       type: String,
       required: true,
-      select: 0,
+      // select: 0,
     },
     needsPasswordChange: {
       type: Boolean,
       default: true,
+    },
+    passwordChangedAt: {
+      type: Date,
     },
     student: {
       type: Schema.Types.ObjectId,
